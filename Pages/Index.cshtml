@@ -1,0 +1,43 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="welcome-section text-center">
+    <h1 class="display-4 mb-4">Welcome to Course Management Portal</h1>
+    <p class="lead mb-4">Manage courses, students, instructors, and enrollments efficiently</p>
+    <a asp-page="/Dashboard/Index" class="btn btn-light btn-lg">
+        <i class="fas fa-chart-line"></i> Go to Dashboard
+    </a>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <div class="card-body text-center">
+                <i class="fas fa-book fa-4x text-primary mb-3"></i>
+                <h3>Manage Courses</h3>
+                <p>Add, edit, and manage course information</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <div class="card-body text-center">
+                <i class="fas fa-user-graduate fa-4x text-success mb-3"></i>
+                <h3>Student Management</h3>
+                <p>Register and manage student records</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <div class="card-body text-center">
+                <i class="fas fa-chalkboard-teacher fa-4x text-warning mb-3"></i>
+                <h3>Instructor Portal</h3>
+                <p>Manage instructor profiles and assignments</p>
+            </div>
+        </div>
+    </div>
+</div>

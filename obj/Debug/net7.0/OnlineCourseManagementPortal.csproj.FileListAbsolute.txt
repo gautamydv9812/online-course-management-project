@@ -1,0 +1,10 @@
+C:\Users\hp\source\repos\OnlineCourseManagementPortal\OnlineCourseManagementPortal\obj\Debug\net7.0\OnlineCourseManagementPortal.csproj.AssemblyReference.cache
+C:\Users\hp\source\repos\OnlineCourseManagementPortal\OnlineCourseManagementPortal\obj\Debug\net7.0\rpswa.dswa.cache.json
+C:\Users\hp\source\repos\OnlineCourseManagementPortal\OnlineCourseManagementPortal\obj\Debug\net7.0\OnlineCourseManagementPortal.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hp\source\repos\OnlineCourseManagementPortal\OnlineCourseManagementPortal\obj\Debug\net7.0\OnlineCourseManagementPortal.AssemblyInfoInputs.cache
+C:\Users\hp\source\repos\OnlineCourseManagementPortal\OnlineCourseManagementPortal\obj\Debug\net7.0\OnlineCourseManagementPortal.AssemblyInfo.cs
+C:\Users\hp\source\repos\OnlineCourseManagementPortal\OnlineCourseManagementPortal\obj\Debug\net7.0\OnlineCourseManagementPortal.csproj.CoreCompileInputs.cache
+C:\Users\hp\source\repos\OnlineCourseManagementPortal\OnlineCourseManagementPortal\obj\Debug\net7.0\OnlineCourseManagementPortal.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\hp\source\repos\OnlineCourseManagementPortal\OnlineCourseManagementPortal\obj\Debug\net7.0\OnlineCourseManagementPortal.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\hp\source\repos\OnlineCourseManagementPortal\OnlineCourseManagementPortal\obj\Debug\net7.0\OnlineCourseManagementPortal.RazorAssemblyInfo.cache
+C:\Users\hp\source\repos\OnlineCourseManagementPortal\OnlineCourseManagementPortal\obj\Debug\net7.0\OnlineCourseManagementPortal.RazorAssemblyInfo.cs

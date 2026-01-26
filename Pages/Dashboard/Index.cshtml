@@ -1,0 +1,189 @@
+﻿@page
+@model OnlineCourseManagementPortal.Pages.Dashboard.IndexModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<h1><i class="fas fa-chart-line"></i> Dashboard Overview</h1>
+
+<div class="row mt-4">
+    <div class="col-md-3 mb-4">
+        <div class="card stat-card bg-primary text-white">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="card-title">Total Courses</h6>
+                        <h2 class="mb-0">@Model.TotalCourses</h2>
+                    </div>
+                    <div>
+                        <i class="fas fa-book fa-3x opacity-50"></i>
+                    </div>
+                </div>
+                <p class="card-text mt-2">Active: @Model.ActiveCourses</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-4">
+        <div class="card stat-card bg-success text-white">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="card-title">Total Students</h6>
+                        <h2 class="mb-0">@Model.TotalStudents</h2>
+                    </div>
+                    <div>
+                        <i class="fas fa-user-graduate fa-3x opacity-50"></i>
+                    </div>
+                </div>
+                <p class="card-text mt-2">Active: @Model.ActiveStudents</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-4">
+        <div class="card stat-card bg-warning text-white">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="card-title">Total Instructors</h6>
+                        <h2 class="mb-0">@Model.TotalInstructors</h2>
+                    </div>
+                    <div>
+                        <i class="fas fa-chalkboard-teacher fa-3x opacity-50"></i>
+                    </div>
+                </div>
+                <p class="card-text mt-2">Active: @Model.ActiveInstructors</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3 mb-4">
+        <div class="card stat-card bg-info text-white">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="card-title">Total Enrollments</h6>
+                        <h2 class="mb-0">@Model.TotalEnrollments</h2>
+                    </div>
+                    <div>
+                        <i class="fas fa-clipboard-list fa-3x opacity-50"></i>
+                    </div>
+                </div>
+                <p class="card-text mt-2">Active: @Model.ActiveEnrollments</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Links -->
+<div class="row mt-4">
+    <div class="col-md-3 mb-3">
+        <div class="card">
+            <div class="card-body text-center">
+                <i class="fas fa-plus-circle fa-3x text-primary mb-3"></i>
+                <h5>Add New Course</h5>
+                <a href="/Courses/Create" class="btn btn-primary btn-sm">Create Course</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-3">
+        <div class="card">
+            <div class="card-body text-center">
+                <i class="fas fa-user-plus fa-3x text-success mb-3"></i>
+                <h5>Register Student</h5>
+                <a href="/Students/Create" class="btn btn-success btn-sm">Add Student</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-3">
+        <div class="card">
+            <div class="card-body text-center">
+                <i class="fas fa-chalkboard-teacher fa-3x text-warning mb-3"></i>
+                <h5>Add Instructor</h5>
+                <a href="/Instructors/Create" class="btn btn-warning btn-sm">Add Instructor</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-3">
+        <div class="card">
+            <div class="card-body text-center">
+                <i class="fas fa-clipboard-check fa-3x text-info mb-3"></i>
+                <h5>New Enrollment</h5>
+                <a href="/Enrollments/Create" class="btn btn-info btn-sm">Enroll Student</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Recent Activities -->
+<div class="row mt-4">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5><i class="fas fa-history"></i> Recent Activities</h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Activity</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>@DateTime.Now.AddDays(-1).ToString("MMM dd, yyyy")</td>
+                                <td>New Enrollment</td>
+                                <td>Sambhav Silwal enrolled in Web Development</td>
+                            </tr>
+                            <tr>
+                                <td>@DateTime.Now.AddDays(-2).ToString("MMM dd, yyyy")</td>
+                                <td>Course Created</td>
+                                <td>New course "Database Management" added</td>
+                            </tr>
+                            <tr>
+                                <td>@DateTime.Now.AddDays(-3).ToString("MMM dd, yyyy")</td>
+                                <td>Instructor Added</td>
+                                <td>Dr. Smith joined as new instructor</td>
+                            </tr>
+                            <tr>
+                                <td>@DateTime.Now.AddDays(-4).ToString("MMM dd, yyyy")</td>
+                                <td>Student Registered</td>
+                                <td>New student Sejal Oli registered</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .stat-card {
+        border-radius: 10px;
+        transition: transform 0.3s;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+    .card-title {
+        font-size: 14px;
+        font-weight: 600;
+        opacity: 0.9;
+    }
+</style>
+
+@section Scripts {
+    <script>
+        setTimeout(function() {
+            $('.alert').fadeOut('slow');
+        }, 5000);
+    </script>
+}
