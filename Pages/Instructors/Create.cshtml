@@ -1,53 +1,91 @@
 ﻿@page
-@model CreateModel
+@model OnlineCourseManagementPortal.Pages.Instructors.CreateModel
+@{
+    ViewData["Title"] = "Create Instructor";
+}
 
-<h2>Add Instructor</h2>
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+        <div class="card">
+            <div class="card-header">
+                <h3><i class="fas fa-user-plus"></i> Add New Instructor</h3>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-<form method="post">
-    <div class="form-group">
-        <label asp-for="Instructor.FirstName"></label>
-        <input asp-for="Instructor.FirstName" class="form-control" />
-        <span asp-validation-for="Instructor.FirstName"></span>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Instructor.FirstName" class="form-label">First Name *</label>
+                            <input asp-for="Instructor.FirstName" class="form-control" />
+                            <span asp-validation-for="Instructor.FirstName" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Instructor.LastName" class="form-label">Last Name *</label>
+                            <input asp-for="Instructor.LastName" class="form-control" />
+                            <span asp-validation-for="Instructor.LastName" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Instructor.Email" class="form-label">Email *</label>
+                            <input asp-for="Instructor.Email" type="email" class="form-control" />
+                            <span asp-validation-for="Instructor.Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Instructor.Phone" class="form-label">Phone *</label>
+                            <input asp-for="Instructor.Phone" class="form-control" />
+                            <span asp-validation-for="Instructor.Phone" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Instructor.DateOfBirth" class="form-label">Date of Birth *</label>
+                            <input asp-for="Instructor.DateOfBirth" type="date" class="form-control" />
+                            <span asp-validation-for="Instructor.DateOfBirth" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Instructor.HireDate" class="form-label">Hire Date *</label>
+                            <input asp-for="Instructor.HireDate" type="date" class="form-control" />
+                            <span asp-validation-for="Instructor.HireDate" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Instructor.Specialization" class="form-label">Specialization</label>
+                        <input asp-for="Instructor.Specialization" class="form-control" />
+                        <span asp-validation-for="Instructor.Specialization" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Instructor.Salary" class="form-label">Salary</label>
+                        <input asp-for="Instructor.Salary" class="form-control" />
+                        <span asp-validation-for="Instructor.Salary" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-check mb-3">
+                        <input asp-for="Instructor.IsActive" class="form-check-input" checked />
+                        <label asp-for="Instructor.IsActive" class="form-check-label">Active Instructor</label>
+                    </div>
+
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a asp-page="Index" class="btn btn-secondary me-md-2">Cancel</a>
+                        <button type="submit" class="btn btn-warning">Add Instructor</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
+</div>
 
-    <div class="form-group">
-        <label asp-for="Instructor.LastName"></label>
-        <input asp-for="Instructor.LastName" class="form-control" />
-    </div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
 
-    <div class="form-group">
-        <label asp-for="Instructor.Email"></label>
-        <input asp-for="Instructor.Email" class="form-control" />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="Instructor.Phone"></label>
-        <input asp-for="Instructor.Phone" class="form-control" />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="Instructor.DateOfBirth"></label>
-        <input asp-for="Instructor.DateOfBirth" type="date" class="form-control" />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="Instructor.HireDate"></label>
-        <input asp-for="Instructor.HireDate" type="date" class="form-control" />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="Instructor.Specialization"></label>
-        <input asp-for="Instructor.Specialization" class="form-control" />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="Instructor.Salary"></label>
-        <input asp-for="Instructor.Salary" class="form-control" />
-    </div>
-
-    <div class="form-group">
-        <input asp-for="Instructor.IsActive" /> Active
-    </div>
-
-    <button type="submit" class="btn btn-primary">Save</button>
-</form>

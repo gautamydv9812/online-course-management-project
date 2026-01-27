@@ -1,36 +1,40 @@
-using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using OnlineCourseManagementPortal.Data;
 using OnlineCourseManagementPortal.Models;
+using System.Threading.Tasks;
 
-public class CreateModel : PageModel
+namespace OnlineCourseManagementPortal.Pages.Instructors
 {
-    private readonly ApplicationDbContext _context;
-
-    public CreateModel(ApplicationDbContext context)
+    public class CreateModel : PageModel
     {
-        _context = context;
-    }
+        private readonly ApplicationDbContext _context;
 
-    [BindProperty]
-    public Instructor Instructor { get; set; }
+        public CreateModel(ApplicationDbContext context)
+        {
+            _context = context;
+        }
 
-    public void OnGet()
-    {
-        Instructor = new Instructor();
-    }
+        [BindProperty]
+        public Instructor Instructor { get; set; } = new Instructor();
 
-    public async Task<IActionResult> OnPostAsync()
-    {
-        if (!ModelState.IsValid)
+        public IActionResult OnGet()
         {
             return Page();
         }
 
-        _context.Instructors.Add(Instructor);
-        await _context.SaveChangesAsync();
+        public async Task<IActionResult> OnPostAsync()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
 
-        return RedirectToPage("Index");
+            _context.Instructors.Add(Instructor);
+            await _context.SaveChangesAsync();
+
+            TempData["SuccessMessage"] = "Instructor created successfully!";
+            return RedirectToPage("./Index");
+        }
     }
 }

@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using OnlineCourseManagementPortal.Data;
 using OnlineCourseManagementPortal.Models;
 using System.Threading.Tasks;
@@ -18,27 +19,40 @@ namespace OnlineCourseManagementPortal.Pages.Instructors
         [BindProperty]
         public Instructor Instructor { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int id)
+        public async Task<IActionResult> OnGetAsync(int? id)
         {
-            Instructor = await _context.Instructors.FindAsync(id);
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            Instructor = await _context.Instructors.FirstOrDefaultAsync(m => m.Id == id);
 
             if (Instructor == null)
+            {
                 return NotFound();
+            }
 
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(int? id)
         {
-            var instructor = await _context.Instructors.FindAsync(Instructor.Id);
-
-            if (instructor != null)
+            if (id == null)
             {
-                _context.Instructors.Remove(instructor);
-                await _context.SaveChangesAsync();
+                return NotFound();
             }
 
-            return RedirectToPage("Index");
+            Instructor = await _context.Instructors.FindAsync(id);
+
+            if (Instructor != null)
+            {
+                _context.Instructors.Remove(Instructor);
+                await _context.SaveChangesAsync();
+                TempData["SuccessMessage"] = "Instructor deleted successfully!";
+            }
+
+            return RedirectToPage("./Index");
         }
     }
 }
