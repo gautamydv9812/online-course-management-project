@@ -1,11 +1,13 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using OnlineCourseManagementPortal.Data;
 using OnlineCourseManagementPortal.Models;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
-namespace OnlineCourseManagementPortal.Pages.Instructors
+namespace OnlineCourseManagementPortal.Pages.Courses
 {
     public class IndexModel : PageModel
     {
@@ -16,13 +18,13 @@ namespace OnlineCourseManagementPortal.Pages.Instructors
             _context = context;
         }
 
-        public List<Instructor> Instructors { get; set; } = new List<Instructor>();
+        public List<Course> Courses { get; set; } = new List<Course>();
 
         public async Task OnGetAsync()
         {
-            Instructors = await _context.Instructors
-                .Include(i => i.Courses)
-                .OrderBy(i => i.LastName)
+            Courses = await _context.Courses
+                .Include(c => c.Instructor)
+                .OrderBy(c => c.Code)
                 .ToListAsync();
         }
     }

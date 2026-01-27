@@ -1,0 +1,83 @@
+@page
+@model OnlineCourseManagementPortal.Pages.Enrollments.IndexModel
+@{
+    ViewData["Title"] = "Enrollments";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1><i class="fas fa-clipboard-list"></i> Enrollments</h1>
+    <a asp-page="Create" class="btn btn-info">
+        <i class="fas fa-plus"></i> New Enrollment
+    </a>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Student</th>
+                <th>Course</th>
+                <th>Instructor</th>
+                <th>Enrollment Date</th>
+                <th>Status</th>
+                <th>Grade</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var enrollment in Model.Enrollments)
+            {
+            <tr>
+                <td>@enrollment.Id</td>
+                <td>@enrollment.Student?.FullName</td>
+                <td>@enrollment.Course?.Title</td>
+                <td>@enrollment.Course?.Instructor?.FullName</td>
+                <td>@enrollment.EnrollmentDate.ToString("MMM dd, yyyy")</td>
+                <td>
+                    @switch (enrollment.Status)
+                        {
+                            case EnrollmentStatus.Active:
+                    <span class="badge bg-success">Active</span>
+                                break;
+                            case EnrollmentStatus.Completed:
+                    <span class="badge bg-primary">Completed</span>
+                                break;
+                            case EnrollmentStatus.Dropped:
+                    <span class="badge bg-warning">Dropped</span>
+                                break;
+                            case EnrollmentStatus.Failed:
+                    <span class="badge bg-danger">Failed</span>
+                                break;
+                        }
+                </td>
+                <td>
+                    @if (!string.IsNullOrEmpty(enrollment.Grade))
+                        {
+                    <span class="badge bg-secondary">@enrollment.Grade</span>
+                        }
+                        else
+                        {
+                    <span class="text-muted">-</span>
+                        }
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@enrollment.Id" class="btn btn-warning btn-sm">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    <a asp-page="./Delete" asp-route-id="@enrollment.Id" class="btn btn-danger btn-sm">
+                        <i class="fas fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@if (!Model.Enrollments.Any())
+{
+<div class="alert alert-info">
+    <i class="fas fa-info-circle"></i> No enrollments found. Create your first enrollment!
+</div>
+}

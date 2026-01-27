@@ -5,7 +5,7 @@ using OnlineCourseManagementPortal.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace OnlineCourseManagementPortal.Pages.Instructors
+namespace OnlineCourseManagementPortal.Pages.Enrollments
 {
     public class IndexModel : PageModel
     {
@@ -16,13 +16,15 @@ namespace OnlineCourseManagementPortal.Pages.Instructors
             _context = context;
         }
 
-        public List<Instructor> Instructors { get; set; } = new List<Instructor>();
+        public List<Enrollment> Enrollments { get; set; } = new List<Enrollment>();
 
         public async Task OnGetAsync()
         {
-            Instructors = await _context.Instructors
-                .Include(i => i.Courses)
-                .OrderBy(i => i.LastName)
+            Enrollments = await _context.Enrollments
+                .Include(e => e.Student)
+                .Include(e => e.Course)
+                    .ThenInclude(c => c.Instructor)
+                .OrderByDescending(e => e.EnrollmentDate)
                 .ToListAsync();
         }
     }
