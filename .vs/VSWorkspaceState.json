@@ -1,6 +1,13 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Models",
+    "\\Pages",
+    "\\Pages\\Dashboard",
+    "\\wwwroot",
+    "\\wwwroot\\css",
+    "\\wwwroot\\js"
   ],
+  "SelectedNode": "\\OnlineCourseManagementPortal.csproj",
   "PreviewInSolutionExplorer": false
 }

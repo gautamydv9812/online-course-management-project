@@ -1,0 +1,89 @@
+@page "{id:int}"
+@model OnlineCourseManagementPortal.Pages.Instructors.DetailsModel
+@{
+    ViewData["Title"] = "Instructor Details";
+}
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3><i class="fas fa-user-tie"></i> Instructor Information</h3>
+            </div>
+            <div class="card-body">
+                <dl class="row">
+                    <dt class="col-sm-4">Instructor ID:</dt>
+                    <dd class="col-sm-8">@Model.Instructor.Id</dd>
+
+                    <dt class="col-sm-4">Full Name:</dt>
+                    <dd class="col-sm-8">@Model.Instructor.FullName</dd>
+
+                    <dt class="col-sm-4">Email:</dt>
+                    <dd class="col-sm-8">@Model.Instructor.Email</dd>
+
+                    <dt class="col-sm-4">Phone:</dt>
+                    <dd class="col-sm-8">@Model.Instructor.Phone</dd>
+
+                    <dt class="col-sm-4">Date of Birth:</dt>
+                    <dd class="col-sm-8">@Model.Instructor.DateOfBirth.ToString("MMM dd, yyyy")</dd>
+
+                    <dt class="col-sm-4">Hire Date:</dt>
+                    <dd class="col-sm-8">@Model.Instructor.HireDate.ToString("MMM dd, yyyy")</dd>
+
+                    <dt class="col-sm-4">Specialization:</dt>
+                    <dd class="col-sm-8">@Model.Instructor.Specialization</dd>
+
+                    <dt class="col-sm-4">Salary:</dt>
+                    <dd class="col-sm-8">@Model.Instructor.Salary.ToString("C")</dd>
+
+                    <dt class="col-sm-4">Status:</dt>
+                    <dd class="col-sm-8">
+                        @if (Model.Instructor.IsActive)
+                        {
+                        <span class="badge bg-success">Active</span>
+                        }
+                        else
+                        {
+                        <span class="badge bg-danger">Inactive</span>
+                        }
+                    </dd>
+                </dl>
+            </div>
+            <div class="card-footer">
+                <a asp-page="./Edit" asp-route-id="@Model.Instructor.Id" class="btn btn-warning">
+                    <i class="fas fa-edit"></i> Edit
+                </a>
+                <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h5><i class="fas fa-book"></i> Assigned Courses (@Model.Courses.Count)</h5>
+            </div>
+            <div class="card-body">
+                @if (Model.Courses.Any())
+                {
+                <ul class="list-group list-group-flush">
+                    @foreach (var course in Model.Courses)
+                        {
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div>
+                            <strong>@course.Title</strong><br>
+                            <small class="text-muted">@course.Code</small>
+                        </div>
+                        <span class="badge bg-info rounded-pill">@course.CurrentStudents</span>
+                    </li>
+                        }
+                </ul>
+                }
+                else
+                {
+                <p class="text-muted">No courses assigned yet.</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>

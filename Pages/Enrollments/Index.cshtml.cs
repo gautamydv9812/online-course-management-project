@@ -4,6 +4,7 @@ using OnlineCourseManagementPortal.Data;
 using OnlineCourseManagementPortal.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace OnlineCourseManagementPortal.Pages.Enrollments
 {
