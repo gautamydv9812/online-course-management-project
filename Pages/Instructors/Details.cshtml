@@ -1,0 +1,38 @@
+﻿@page "{id:int}"
+@model OnlineCourseManagementPortal.Pages.Instructors.DetailsModel
+
+@{
+    ViewData["Title"] = "Instructor Details";
+}
+
+<h2>Instructor Details</h2>
+<hr />
+
+<dl class="row">
+    <dt class="col-sm-3">Full Name</dt>
+    <dd class="col-sm-9">@Model.Instructor.FullName</dd>
+
+    <dt class="col-sm-3">Email</dt>
+    <dd class="col-sm-9">@Model.Instructor.Email</dd>
+
+    <dt class="col-sm-3">Phone</dt>
+    <dd class="col-sm-9">@Model.Instructor.Phone</dd>
+
+    <dt class="col-sm-3">Date of Birth</dt>
+    <dd class="col-sm-9">@Model.Instructor.DateOfBirth.ToShortDateString()</dd>
+
+    <dt class="col-sm-3">Hire Date</dt>
+    <dd class="col-sm-9">@Model.Instructor.HireDate.ToShortDateString()</dd>
+
+    <dt class="col-sm-3">Specialization</dt>
+    <dd class="col-sm-9">@Model.Instructor.Specialization</dd>
+
+    <dt class="col-sm-3">Salary</dt>
+    <dd class="col-sm-9">@Model.Instructor.Salary</dd>
+
+    <dt class="col-sm-3">Active</dt>
+    <dd class="col-sm-9">@Model.Instructor.IsActive</dd>
+</dl>
+
+<a asp-page="Edit" asp-route-id="@Model.Instructor.Id" class="btn btn-warning">Edit</a>
+<a asp-page="Index" class="btn btn-secondary">Back to List</a>

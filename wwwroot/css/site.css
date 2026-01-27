@@ -55,6 +55,11 @@ body {
     font-weight: 500;
     margin-bottom: 5px;
 }
+.EDD-btn {
+    display: flex;
+    gap: 8px;
+    white-space: nowrap;
+}
 
 /* Alert styles */
 .alert {

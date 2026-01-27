@@ -1,0 +1,62 @@
+﻿@page "{id:int}"
+@model OnlineCourseManagementPortal.Pages.Instructors.EditModel
+
+@{
+    ViewData["Title"] = "Edit Instructor";
+}
+
+<h2>Edit Instructor</h2>
+<hr />
+
+<form method="post">
+    <input type="hidden" asp-for="Instructor.Id" />
+
+    <div class="mb-3">
+        <label asp-for="Instructor.FirstName" class="form-label"></label>
+        <input asp-for="Instructor.FirstName" class="form-control" />
+        <span asp-validation-for="Instructor.FirstName" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Instructor.LastName" class="form-label"></label>
+        <input asp-for="Instructor.LastName" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Instructor.Email" class="form-label"></label>
+        <input asp-for="Instructor.Email" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Instructor.Phone" class="form-label"></label>
+        <input asp-for="Instructor.Phone" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Instructor.DateOfBirth" class="form-label"></label>
+        <input asp-for="Instructor.DateOfBirth" class="form-control" type="date" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Instructor.HireDate" class="form-label"></label>
+        <input asp-for="Instructor.HireDate" class="form-control" type="date" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Instructor.Specialization" class="form-label"></label>
+        <input asp-for="Instructor.Specialization" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Instructor.Salary" class="form-label"></label>
+        <input asp-for="Instructor.Salary" class="form-control" />
+    </div>
+
+    <div class="form-check mb-3">
+        <input asp-for="Instructor.IsActive" class="form-check-input" />
+        <label asp-for="Instructor.IsActive" class="form-check-label"></label>
+    </div>
+
+    <button type="submit" class="btn btn-success">Save</button>
+    <a asp-page="Index" class="btn btn-secondary">Cancel</a>
+</form>
