@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hp\\source\\repos\\OnlineCourseManagementPortal\\OnlineCourseManagementPortal\\OnlineCourseManagementPortal.csproj": {}
+    "C:\\Users\\hp\\online-course-management-project\\OnlineCourseManagementPortal.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hp\\source\\repos\\OnlineCourseManagementPortal\\OnlineCourseManagementPortal\\OnlineCourseManagementPortal.csproj": {
+    "C:\\Users\\hp\\online-course-management-project\\OnlineCourseManagementPortal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hp\\source\\repos\\OnlineCourseManagementPortal\\OnlineCourseManagementPortal\\OnlineCourseManagementPortal.csproj",
+        "projectUniqueName": "C:\\Users\\hp\\online-course-management-project\\OnlineCourseManagementPortal.csproj",
         "projectName": "OnlineCourseManagementPortal",
-        "projectPath": "C:\\Users\\hp\\source\\repos\\OnlineCourseManagementPortal\\OnlineCourseManagementPortal\\OnlineCourseManagementPortal.csproj",
+        "projectPath": "C:\\Users\\hp\\online-course-management-project\\OnlineCourseManagementPortal.csproj",
         "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hp\\source\\repos\\OnlineCourseManagementPortal\\OnlineCourseManagementPortal\\obj\\",
+        "outputPath": "C:\\Users\\hp\\online-course-management-project\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -54,6 +54,10 @@
               "version": "[8.0.0, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
               "target": "Package",
               "version": "[8.0.0, )"
             },

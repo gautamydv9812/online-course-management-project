@@ -1,62 +1,125 @@
 /* Custom styles for Course Management Portal */
 
+/* Body and container */
 body {
+    padding-top: 0;
     background-color: #f8f9fa;
 }
 
-.navbar-brand {
-    font-weight: 600;
-    font-size: 1.5rem;
+.container {
+    max-width: 1200px;
 }
 
+/* Card styles */
+.card {
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: #fff;
+    border-bottom: 1px solid #e9ecef;
+    padding: 15px 20px;
+}
+
+/* Table styles */
+.table th {
+    font-weight: 600;
+    background-color: #f8f9fa;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0,0,0,.02);
+}
+
+/* Button styles */
+.btn {
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-weight: 500;
+}
+
+.btn-sm {
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+/* Form styles */
+.form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.form-label {
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+/* Alert styles */
+.alert {
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+/* Badge styles */
+.badge {
+    font-weight: 500;
+    padding: 5px 10px;
+}
+
+/* Welcome section on home page */
+.welcome-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 60px 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+    .welcome-section h1 {
+        font-weight: 700;
+    }
+
+/* Stat cards */
 .stat-card {
     border-radius: 10px;
-    transition: transform 0.3s;
-    border: none;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
     .stat-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2) !important;
     }
 
-.card-title {
-    font-size: 14px;
-    font-weight: 600;
-    opacity: 0.9;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+/* Progress bar */
+.progress {
+    height: 8px;
+    border-radius: 4px;
 }
 
-.card-body i {
-    opacity: 0.7;
+.progress-bar {
+    background-color: #007bff;
+    border-radius: 4px;
 }
 
-.table th {
-    font-weight: 600;
-    border-top: none;
-}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 
-.table-hover tbody tr:hover {
-    background-color: rgba(0, 123, 255, 0.05);
-}
+    .table-responsive {
+        border: 1px solid #dee2e6;
+    }
 
-.btn {
-    border-radius: 5px;
-    font-weight: 500;
-    padding: 8px 20px;
-}
+    .welcome-section {
+        padding: 40px 15px;
+    }
 
-.display-4 {
-    color: #2c3e50;
-    font-weight: 700;
-}
-
-.welcome-section {
-    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-    border-radius: 15px;
-    padding: 3rem;
-    margin-bottom: 2rem;
-    color: white;
+        .welcome-section h1 {
+            font-size: 2rem;
+        }
 }

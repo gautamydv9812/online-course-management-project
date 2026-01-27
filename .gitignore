@@ -1,0 +1,13 @@
+# Visual Studio / .NET temporary files
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.sqlite
+*.pdb
+*.exe
+*.cache
+
+# Optional: Node/npm (if any)
+node_modules/

@@ -15,10 +15,14 @@
 		</PackageReference>
 		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="8.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Pages\Courses\" />
+		<Folder Include="Pages\Courses\" />
+		<Folder Include="Pages\Students\" />
+		<Folder Include="Pages\Instructors\" />
+		<Folder Include="Pages\Enrollments\" />
 	</ItemGroup>
 
 </Project>
