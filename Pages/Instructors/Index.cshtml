@@ -1,0 +1,65 @@
+﻿@page
+@model OnlineCourseManagementPortal.Pages.Instructors.IndexModel
+
+@{
+    ViewData["Title"] = "Instructors";
+}
+
+<h2 class="mb-3">Instructors</h2>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">
+        + Add New Instructor
+    </a>
+</p>
+
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Hire Date</th>
+            <th>Specialization</th>
+            <th>Salary</th>
+            <th>Active</th>
+            <th style="width:180px;">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Instructor)
+        {
+            <tr>
+                <td>@item.FullName</td>
+                <td>@item.Email</td>
+                <td>@item.Phone</td>
+                <td>@item.HireDate.ToString("yyyy-MM-dd")</td>
+                <td>@item.Specialization</td>
+                <td>@item.Salary</td>
+                <td>
+                    @if (item.IsActive)
+                    {
+                        <span class="badge bg-success">Yes</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-danger">No</span>
+                    }
+                </td>
+                <td>
+                    <div class = "EDD-btn">
+                    <a asp-page="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">
+                        Edit
+                    </a>
+                    <a asp-page="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">
+                        Details
+                    </a>
+                    <a asp-page="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">
+                        Delete
+                    </a>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
