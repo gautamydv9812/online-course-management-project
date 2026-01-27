@@ -47,6 +47,11 @@ body {
     font-weight: 500;
     padding: 8px 20px;
 }
+.EDD-btn {
+    display: flex;
+    gap: 8px;
+    white-space: nowrap;
+}
 
 .display-4 {
     color: #2c3e50;
