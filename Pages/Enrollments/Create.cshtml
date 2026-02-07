@@ -27,12 +27,6 @@
                             <label asp-for="Enrollment.CourseId" class="form-label">Course *</label>
                             <select asp-for="Enrollment.CourseId" asp-items="Model.Courses" class="form-control">
                                 <option value="">-- Select Course --</option>
-                                <option value="0">Python</option>
-                                <option value="1">Artificial Intelligence(AI)</option>
-                                <option value="2">Advance Java</option>
-                                <option value="2">Machine Learning</option>
-                                <option value="3">C programing</option>
-                                <option value="3">Database</option>
                             </select>
                             <span asp-validation-for="Enrollment.CourseId" class="text-danger"></span>
                         </div>

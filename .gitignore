@@ -1,13 +1,14 @@
-# Visual Studio / .NET temporary files
+# Visual Studio
 .vs/
-bin/
-obj/
 *.user
 *.suo
 *.sqlite
-*.pdb
-*.exe
-*.cache
 
-# Optional: Node/npm (if any)
-node_modules/
+# Build folders
+bin/
+obj/
+
+# Others
+*.exe
+*.dll
+*.pdb
